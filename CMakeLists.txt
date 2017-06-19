@@ -584,6 +584,7 @@ ADD_DEFINITIONS(-D_FILE_OFFSET_BITS=64)
 FILE(GLOB SRC_H include/git2.h include/git2/*.h include/git2/sys/*.h)
 
 # On Windows use specific platform sources
+ADD_DEFINITIONS(-DNO_ADDRINFO)
 IF (WIN32 AND NOT CYGWIN)
 	ADD_DEFINITIONS(-DWIN32 -D_WIN32_WINNT=0x0501)
 	FILE(GLOB SRC_OS src/win32/*.c src/win32/*.h)

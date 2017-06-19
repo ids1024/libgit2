@@ -35,11 +35,11 @@ int p_getaddrinfo(
 		return -2;
 	}
 
-	ainfo->ai_servent = getservbyname(port, 0);
+	ainfo->ai_servent = NULL;
 
-	if (ainfo->ai_servent)
-		ainfo->ai_port = ainfo->ai_servent->s_port;
-	else
+//	if (ainfo->ai_servent)
+//		ainfo->ai_port = ainfo->ai_servent->s_port;
+//	else
 		ainfo->ai_port = atol(port);
 
 	memcpy(&ainfo->ai_addr_in.sin_addr,
