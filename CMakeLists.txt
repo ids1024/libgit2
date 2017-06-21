@@ -596,6 +596,7 @@ ELSE()
 	ENDIF()
 	FILE(GLOB SRC_OS src/unix/*.c src/unix/*.h)
 ENDIF()
+ADD_DEFINITIONS(-DNO_MMAP)
 FILE(GLOB SRC_GIT2 src/*.c src/*.h src/transports/*.c src/transports/*.h src/xdiff/*.c src/xdiff/*.h)
 
 # Determine architecture of the machine
